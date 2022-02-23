@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Levels.unity
+    guid: a4d40515548ad4988818e43774b10b3d
+  - enabled: 1
+    path: Assets/Scenes/eleph.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/eleph2.unity
+    guid: a6e12246a36324e01bf43305711715ed
+  - enabled: 1
+    path: Assets/Scenes/teapot.unity
+    guid: 2e0b8b19520884b9f8689fc0c8c633b6
+  - enabled: 1
+    path: Assets/Scenes/glob.unity
+    guid: 10977af91ffb84b5e9ca214b0aca125b
+  - enabled: 1
+    path: Assets/Scenes/42.unity
+    guid: 221af8d96151d4ed7a60630162698db6
   m_configObjects: {}

@@ -3,7 +3,6 @@ using UnityEngine;
 public class Rotation : MonoBehaviour
 {
     Rigidbody rb;
-    bool drag = false;
     Transform c;
     string tag_g;
     
@@ -16,15 +15,6 @@ public class Rotation : MonoBehaviour
         tag_g = gameObject.tag;
     }
 
-    
-    void Update()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            drag = false;
-        }
-    }
-
     void FixedUpdate() {
         if (Input.GetMouseButton(0))
         {
@@ -32,26 +22,28 @@ public class Rotation : MonoBehaviour
             {
                 if (tag_g == "top")
                 {
-                    float x = Input.GetAxis("Mouse X") *  Rotspeed * Time.fixedDeltaTime;
-                    float y = Input.GetAxis("Mouse Y") *  Rotspeed * Time.fixedDeltaTime;
+                    // x = Input.GetAxis("Mouse X") *  Rotspeed * Time.fixedDeltaTime;
+                    // y = Input.GetAxis("Mouse Y") *  Rotspeed * Time.fixedDeltaTime;
 
-                    rb.AddTorque (Vector3.down * x);
-                    rb.AddTorque (Vector3.right * y);
+                    // rb.AddTorque (Vector3.down * x);
+                    // rb.AddTorque (Vector3.right * y);
+                    rotatio_manager();
                 }
             }
             else if (tag_g != "top")
             {
-                float x = Input.GetAxis("Mouse X") *  Rotspeed * Time.fixedDeltaTime;
-                float y = Input.GetAxis("Mouse Y") *  Rotspeed * Time.fixedDeltaTime;
-
-                rb.AddTorque (Vector3.down * x);
-                rb.AddTorque (Vector3.right * y);
+                rotatio_manager();
             }
         }
     }
 
-    void OnMouseDrag() {
-            drag = true;
+    void rotatio_manager()
+    {
+        float x = Input.GetAxis("Mouse X") *  Rotspeed * Time.fixedDeltaTime;
+        float y = Input.GetAxis("Mouse Y") *  Rotspeed * Time.fixedDeltaTime;
+
+        rb.AddTorque (Vector3.down * x);
+        rb.AddTorque (Vector3.right * y);
     }
 
     void OnCollisionEnter(Collision collision)

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - top
+  - main
+  - levels
+  - eleph1
+  - tea
+  - globe
+  - 42
   layers:
   - Default
   - TransparentFX
