@@ -22,11 +22,6 @@ public class Rotation : MonoBehaviour
             {
                 if (tag_g == "top")
                 {
-                    // x = Input.GetAxis("Mouse X") *  Rotspeed * Time.fixedDeltaTime;
-                    // y = Input.GetAxis("Mouse Y") *  Rotspeed * Time.fixedDeltaTime;
-
-                    // rb.AddTorque (Vector3.down * x);
-                    // rb.AddTorque (Vector3.right * y);
                     rotatio_manager();
                 }
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class shadow_validator : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class shadow_validator : MonoBehaviour
     Vector3 targetdir1 = Vector3.forward;
     Vector3 targetdir2 = Vector3.up;
     GameObject top;
+    int currentlevel;
     void Start ()
     {
         top = GameObject.FindGameObjectWithTag("top");
         tag_o = gameObject.tag;
+        currentlevel = PlayerPrefs.GetInt("currentlvl",1);
     }
     // Start is called before the first frame update
     void FixedUpdate()
@@ -34,21 +37,33 @@ public class shadow_validator : MonoBehaviour
         {  
             if (IsBetween(angle1,80f,100f) && IsBetween(angle2,90f,110f))
             {
-               Debug.Log("tsuuu");
+                if(currentlevel < 2)
+                {
+                    PlayerPrefs.SetInt("currentlvl",2);
+                }
+               SceneManager.LoadScene(0);
             }
         }
         if (tag_o == "eleph2")
         {
             if (IsBetween(angle1,80f,100f) && IsBetween(angle2,90f,110f))
             {
-               Debug.Log("tsuuu");
+               if(currentlevel < 3)
+                {
+                    PlayerPrefs.SetInt("currentlvl",3);
+                }
+               SceneManager.LoadScene(0);
             }
         }
         if (tag_o == "tea")
         {
             if (IsBetween(angle1,55f,75f) && IsBetween(angle2,60f,80f))
             {
-               Debug.Log("tsuuu");
+               if(currentlevel < 4)
+                {
+                    PlayerPrefs.SetInt("currentlvl",4);
+                }
+               SceneManager.LoadScene(0);
             }
         }
         if (tag_o == "globe")
@@ -57,17 +72,26 @@ public class shadow_validator : MonoBehaviour
             {
                 if (IsBetween(angle3,75f,95f) && IsBetween(angle4,65f,85f))
                 {
-                    Debug.Log("tsuuu");
+                    if(currentlevel < 5)
+                {
+                    PlayerPrefs.SetInt("currentlvl",5);
+                }
+               SceneManager.LoadScene(0);
                 }
             }
         }
         if (tag_o == "42")
         {
-            if (IsBetween(angle1,80f,100f) && IsBetween(angle2,82f,102f))
+            Debug.Log(angle4);
+            if (IsBetween(angle1,85f,105f) && IsBetween(angle2,1f,10f))
             {
-                if (IsBetween(angle3,75f,95f) && IsBetween(angle4,65f,85f))
+                if (IsBetween(angle3,130f,150f) && IsBetween(angle4,128f,148f))
                 {
-                    Debug.Log("tsuuu");
+                    if(currentlevel < 6)
+                {
+                    PlayerPrefs.SetInt("currentlvl",6);
+                }
+               SceneManager.LoadScene(0);
                 }
             }
         }
