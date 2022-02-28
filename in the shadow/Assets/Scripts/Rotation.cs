@@ -5,9 +5,13 @@ public class Rotation : MonoBehaviour
     Rigidbody rb;
     Transform c;
     string tag_g;
+    public shadow_validator theshadow_validator;
     
     [SerializeField]float Rotspeed = 2f;
     
+    void Awake() {
+        theshadow_validator = gameObject.GetComponent<shadow_validator>();    
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,7 +20,7 @@ public class Rotation : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !theshadow_validator.levelcompleted)
         {
             if (Input.GetKey(KeyCode.Z))
             {

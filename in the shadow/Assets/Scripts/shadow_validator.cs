@@ -15,12 +15,18 @@ public class shadow_validator : MonoBehaviour
     Vector3 targetdir1 = Vector3.forward;
     Vector3 targetdir2 = Vector3.up;
     GameObject top;
+    GameObject lighto;
     int currentlevel;
+    public bool levelcompleted = false;
+    Light myLight;
+    float lightadd = 0.9f;
     void Start ()
     {
         top = GameObject.FindGameObjectWithTag("top");
         tag_o = gameObject.tag;
         currentlevel = PlayerPrefs.GetInt("currentlvl",1);
+        lighto = GameObject.FindGameObjectWithTag("lll");
+        myLight = lighto.GetComponent<Light>();
     }
     // Start is called before the first frame update
     void FixedUpdate()
@@ -41,7 +47,12 @@ public class shadow_validator : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("currentlvl",2);
                 }
-               SceneManager.LoadScene(0);
+                levelcompleted = true;
+                myLight.intensity = lightadd;
+                lightadd += 0.03f;
+                gameObject.transform.eulerAngles = new Vector3(93f, -2f, 11f);
+                StartCoroutine(ExecuteAfterTime(3f));
+               
             }
         }
         if (tag_o == "eleph2")
@@ -105,5 +116,12 @@ public class shadow_validator : MonoBehaviour
             return (true);
         else
             return (false);
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+     yield return new WaitForSeconds(time);
+ 
+     SceneManager.LoadScene(0);
     }
 }
