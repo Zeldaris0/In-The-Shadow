@@ -10,10 +10,11 @@ public class Rotation : MonoBehaviour
     [SerializeField]float Rotspeed = 2f;
     
     void Awake() {
-        theshadow_validator = gameObject.GetComponent<shadow_validator>();    
+        theshadow_validator = gameObject.GetComponent<shadow_validator>();  
     }
     void Start()
     {
+        theshadow_validator = gameObject.GetComponent<shadow_validator>();
         rb = GetComponent<Rigidbody>();
         c = GetComponent<Transform>();
         tag_g = gameObject.tag;
@@ -29,7 +30,7 @@ public class Rotation : MonoBehaviour
                     rotatio_manager();
                 }
             }
-            else if (tag_g != "top")
+            else if (tag_g != "top" && !Input.GetKey(KeyCode.Q))
             {
                 rotatio_manager();
             }

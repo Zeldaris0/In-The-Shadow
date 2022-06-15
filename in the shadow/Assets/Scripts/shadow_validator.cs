@@ -27,6 +27,7 @@ public class shadow_validator : MonoBehaviour
         currentlevel = PlayerPrefs.GetInt("currentlvl",1);
         lighto = GameObject.FindGameObjectWithTag("lll");
         myLight = lighto.GetComponent<Light>();
+        levelcompleted = false;
     }
     // Start is called before the first frame update
     void FixedUpdate()
@@ -63,7 +64,11 @@ public class shadow_validator : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("currentlvl",3);
                 }
-               SceneManager.LoadScene(0);
+               levelcompleted = true;
+                myLight.intensity = lightadd;
+                lightadd += 0.03f;
+                gameObject.transform.eulerAngles = new Vector3(93f, -2f, 11f);
+                StartCoroutine(ExecuteAfterTime(3f));
             }
         }
         if (tag_o == "tea")
@@ -74,7 +79,11 @@ public class shadow_validator : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("currentlvl",4);
                 }
-               SceneManager.LoadScene(0);
+               levelcompleted = true;
+                myLight.intensity = lightadd;
+                lightadd += 0.03f;
+                //gameObject.transform.eulerAngles = new Vector3(93f, -2f, 11f);
+                StartCoroutine(ExecuteAfterTime(3f));
             }
         }
         if (tag_o == "globe")
@@ -87,7 +96,11 @@ public class shadow_validator : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("currentlvl",5);
                 }
-               SceneManager.LoadScene(0);
+               levelcompleted = true;
+                myLight.intensity = lightadd;
+                lightadd += 0.03f;
+                //gameObject.transform.eulerAngles = new Vector3(93f, -2f, 11f);
+                StartCoroutine(ExecuteAfterTime(3f));
                 }
             }
         }
@@ -102,7 +115,11 @@ public class shadow_validator : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("currentlvl",6);
                 }
-               SceneManager.LoadScene(0);
+               levelcompleted = true;
+                myLight.intensity = lightadd;
+                lightadd += 0.03f;
+                //gameObject.transform.eulerAngles = new Vector3(93f, -2f, 11f);
+                StartCoroutine(ExecuteAfterTime(3f));
                 }
             }
         }

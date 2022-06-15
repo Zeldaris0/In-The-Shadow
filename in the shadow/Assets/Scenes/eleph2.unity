@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0309df9b633c34af8aa207776c5e49ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theshadow_validator: {fileID: 0}
   Rotspeed: 300
 --- !u!54 &1828455786
 Rigidbody:
@@ -342,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a02a53daab1484b90487dddc55fd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelcompleted: 0
 --- !u!1001 &158265218360846159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 158265217724159446, guid: 9d92bab3623e64509ab387f06685fd41, type: 3}
+      propertyPath: m_TagString
+      value: lll
+      objectReference: {fileID: 0}
     - target: {fileID: 158265219338935880, guid: 9d92bab3623e64509ab387f06685fd41, type: 3}
       propertyPath: m_RootOrder
       value: 0
